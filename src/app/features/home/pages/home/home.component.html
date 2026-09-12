@@ -1,0 +1,750 @@
+<div class="dashboard">
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar">
+
+    <div class="brand">
+
+      <img
+        src="/assets/escudo-alfonso-ugarte.png"
+        alt="Escudo Alfonso Ugarte"
+      >
+
+      <div class="brand-text">
+        <span>I.E. N.° 20191</span>
+        <strong>Alfonso Ugarte</strong>
+        <small>CAÑETE</small>
+      </div>
+
+    </div>
+
+    <div class="system-name">
+      GESTIÓN DE TRÁMITES FUT
+    </div>
+
+    <nav class="menu">
+
+      <button class="menu-item active">
+        <span class="menu-icon">⌂</span>
+        <span>Dashboard</span>
+      </button>
+
+      <button
+        class="menu-item"
+        (click)="navegar('/fut')"
+      >
+        <span class="menu-icon">＋</span>
+        <span>Registrar FUT</span>
+      </button>
+
+      <button
+        class="menu-item"
+        (click)="navegar('/fut')"
+      >
+        <span class="menu-icon">▤</span>
+        <span>Consulta documental</span>
+      </button>
+
+      <button
+        class="menu-item"
+        (click)="navegar('/tracking')"
+      >
+        <span class="menu-icon">◷</span>
+        <span>Seguimiento</span>
+      </button>
+
+      <button
+        class="menu-item"
+        (click)="navegar('/reports')"
+      >
+        <span class="menu-icon">▥</span>
+        <span>Reportes</span>
+      </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+      <div class="user-mini">
+
+        <div class="avatar">
+          V
+        </div>
+
+        <div>
+          <strong>Usuario institucional</strong>
+          <span>Personal autorizado</span>
+        </div>
+
+      </div>
+
+      <button
+        class="logout"
+        (click)="cerrarSesion()"
+      >
+        <span>↪</span>
+        Cerrar sesión
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= CONTENIDO ================= -->
+
+  <main class="main">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+      <div class="top-title">
+
+        <span>SISTEMA FUT</span>
+
+        <h2>Dashboard</h2>
+
+      </div>
+
+      <div class="top-user">
+
+        <div class="online"></div>
+
+        <span>Sesión activa</span>
+
+        <div class="top-avatar">
+          V
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- CONTENIDO -->
+
+    <section class="content">
+
+
+      <!-- BIENVENIDA -->
+
+      <div class="welcome">
+
+        <div>
+
+          <span class="section-label">
+            GESTIÓN INSTITUCIONAL
+          </span>
+
+          <h1>
+            Panel de trámites
+          </h1>
+
+          <p>
+            Administra, consulta y realiza el seguimiento
+            de los expedientes FUT de la institución.
+          </p>
+
+        </div>
+
+        <button
+          class="primary-button"
+          (click)="navegar('/fut')"
+        >
+          <span>＋</span>
+          Registrar nuevo FUT
+        </button>
+
+      </div>
+
+
+      <!-- ================= ESTADÍSTICAS ================= -->
+
+      <div class="stats-grid">
+
+        <article class="stat-card">
+
+          <div class="stat-icon maroon">
+            ▤
+          </div>
+
+          <div class="stat-info">
+
+            <span>Total de trámites</span>
+
+            <strong>24</strong>
+
+            <small>
+              <b>+12%</b> respecto al mes anterior
+            </small>
+
+          </div>
+
+        </article>
+
+
+        <article class="stat-card">
+
+          <div class="stat-icon blue">
+            ◷
+          </div>
+
+          <div class="stat-info">
+
+            <span>En revisión</span>
+
+            <strong>08</strong>
+
+            <small>
+              Expedientes en proceso
+            </small>
+
+          </div>
+
+        </article>
+
+
+        <article class="stat-card">
+
+          <div class="stat-icon green">
+            ✓
+          </div>
+
+          <div class="stat-info">
+
+            <span>Atendidos</span>
+
+            <strong>12</strong>
+
+            <small>
+              <b>50%</b> del total registrado
+            </small>
+
+          </div>
+
+        </article>
+
+
+        <article class="stat-card">
+
+          <div class="stat-icon amber">
+            !
+          </div>
+
+          <div class="stat-info">
+
+            <span>Observados</span>
+
+            <strong>04</strong>
+
+            <small>
+              Requieren atención
+            </small>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- ================= FILA PRINCIPAL ================= -->
+
+      <div class="main-grid">
+
+
+        <!-- ACTIVIDAD -->
+
+        <section class="panel activity-panel">
+
+          <div class="panel-header">
+
+            <div>
+
+              <h3>
+                Actividad de trámites
+              </h3>
+
+              <p>
+                Resumen de expedientes registrados
+              </p>
+
+            </div>
+
+            <select>
+              <option>Últimos 7 días</option>
+              <option>Últimos 30 días</option>
+              <option>Este año</option>
+            </select>
+
+          </div>
+
+
+          <div class="chart">
+
+            <div class="chart-values">
+
+              <span>12</span>
+              <span>9</span>
+              <span>6</span>
+              <span>3</span>
+              <span>0</span>
+
+            </div>
+
+            <div class="chart-area">
+
+              <div class="horizontal-line line-1"></div>
+              <div class="horizontal-line line-2"></div>
+              <div class="horizontal-line line-3"></div>
+              <div class="horizontal-line line-4"></div>
+              <div class="horizontal-line line-5"></div>
+
+              <div class="bars">
+
+                <div class="bar-item">
+                  <div class="bar" style="height: 35%"></div>
+                  <span>Lun</span>
+                </div>
+
+                <div class="bar-item">
+                  <div class="bar" style="height: 55%"></div>
+                  <span>Mar</span>
+                </div>
+
+                <div class="bar-item">
+                  <div class="bar" style="height: 43%"></div>
+                  <span>Mié</span>
+                </div>
+
+                <div class="bar-item">
+                  <div class="bar active" style="height: 78%"></div>
+                  <span>Jue</span>
+                </div>
+
+                <div class="bar-item">
+                  <div class="bar" style="height: 62%"></div>
+                  <span>Vie</span>
+                </div>
+
+                <div class="bar-item">
+                  <div class="bar" style="height: 88%"></div>
+                  <span>Sáb</span>
+                </div>
+
+                <div class="bar-item">
+                  <div class="bar" style="height: 48%"></div>
+                  <span>Dom</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- ESTADOS -->
+
+        <section class="panel status-panel">
+
+          <div class="panel-header">
+
+            <div>
+
+              <h3>
+                Estado de trámites
+              </h3>
+
+              <p>
+                Distribución actual
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="status-content">
+
+            <div class="donut">
+
+              <div class="donut-center">
+                <strong>24</strong>
+                <span>Total</span>
+              </div>
+
+            </div>
+
+
+            <div class="legend">
+
+              <div>
+                <span class="dot received"></span>
+                <span>Recibidos</span>
+                <strong>4</strong>
+              </div>
+
+              <div>
+                <span class="dot review"></span>
+                <span>En revisión</span>
+                <strong>8</strong>
+              </div>
+
+              <div>
+                <span class="dot done"></span>
+                <span>Atendidos</span>
+                <strong>12</strong>
+              </div>
+
+              <div>
+                <span class="dot observed"></span>
+                <span>Observados</span>
+                <strong>4</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <!-- ================= PARTE INFERIOR ================= -->
+
+      <div class="bottom-grid">
+
+
+        <!-- TRÁMITES RECIENTES -->
+
+        <section class="panel recent-panel">
+
+          <div class="panel-header">
+
+            <div>
+
+              <h3>
+                Trámites recientes
+              </h3>
+
+              <p>
+                Últimos expedientes registrados
+              </p>
+
+            </div>
+
+            <button
+              class="link-button"
+              (click)="navegar('/fut')"
+            >
+              Ver todos →
+            </button>
+
+          </div>
+
+
+          <div class="table-container">
+
+            <table>
+
+              <thead>
+
+                <tr>
+                  <th>CÓDIGO FUT</th>
+                  <th>SOLICITANTE</th>
+                  <th>ASUNTO</th>
+                  <th>FECHA</th>
+                  <th>ESTADO</th>
+                  <th></th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+
+                  <td>
+                    <strong>FUT-2026-024</strong>
+                  </td>
+
+                  <td>
+                    María López
+                  </td>
+
+                  <td>
+                    Solicitud de constancia
+                  </td>
+
+                  <td>
+                    11/09/2026
+                  </td>
+
+                  <td>
+                    <span class="badge review">
+                      En revisión
+                    </span>
+                  </td>
+
+                  <td>
+                    <button class="view-button">
+                      Ver
+                    </button>
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    <strong>FUT-2026-023</strong>
+                  </td>
+
+                  <td>
+                    José Ramos
+                  </td>
+
+                  <td>
+                    Solicitud administrativa
+                  </td>
+
+                  <td>
+                    10/09/2026
+                  </td>
+
+                  <td>
+                    <span class="badge received">
+                      Recibido
+                    </span>
+                  </td>
+
+                  <td>
+                    <button class="view-button">
+                      Ver
+                    </button>
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    <strong>FUT-2026-022</strong>
+                  </td>
+
+                  <td>
+                    Ana Torres
+                  </td>
+
+                  <td>
+                    Certificado de estudios
+                  </td>
+
+                  <td>
+                    09/09/2026
+                  </td>
+
+                  <td>
+                    <span class="badge done">
+                      Atendido
+                    </span>
+                  </td>
+
+                  <td>
+                    <button class="view-button">
+                      Ver
+                    </button>
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    <strong>FUT-2026-021</strong>
+                  </td>
+
+                  <td>
+                    Carlos Pérez
+                  </td>
+
+                  <td>
+                    Solicitud de documentos
+                  </td>
+
+                  <td>
+                    08/09/2026
+                  </td>
+
+                  <td>
+                    <span class="badge observed">
+                      Observado
+                    </span>
+                  </td>
+
+                  <td>
+                    <button class="view-button">
+                      Ver
+                    </button>
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+
+        <!-- ACCIONES RÁPIDAS -->
+
+        <section class="panel quick-panel">
+
+          <div class="panel-header">
+
+            <div>
+
+              <h3>
+                Acciones rápidas
+              </h3>
+
+              <p>
+                Accesos frecuentes
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="quick-actions">
+
+            <button
+              class="quick-action"
+              (click)="navegar('/fut')"
+            >
+
+              <span class="quick-icon maroon">
+                ＋
+              </span>
+
+              <div>
+                <strong>Registrar FUT</strong>
+                <small>
+                  Crear nuevo expediente
+                </small>
+              </div>
+
+              <span class="arrow">
+                →
+              </span>
+
+            </button>
+
+
+            <button
+              class="quick-action"
+              (click)="navegar('/tracking')"
+            >
+
+              <span class="quick-icon blue">
+                ◷
+              </span>
+
+              <div>
+                <strong>Seguimiento</strong>
+                <small>
+                  Consultar expediente
+                </small>
+              </div>
+
+              <span class="arrow">
+                →
+              </span>
+
+            </button>
+
+
+            <button
+              class="quick-action"
+              (click)="navegar('/reports')"
+            >
+
+              <span class="quick-icon green">
+                ▥
+              </span>
+
+              <div>
+                <strong>Reportes</strong>
+                <small>
+                  Ver información estadística
+                </small>
+              </div>
+
+              <span class="arrow">
+                →
+              </span>
+
+            </button>
+
+
+            <button
+              class="quick-action"
+              (click)="navegar('/fut')"
+            >
+
+              <span class="quick-icon purple">
+                ▤
+              </span>
+
+              <div>
+                <strong>Documentos</strong>
+                <small>
+                  Consultar documentación
+                </small>
+              </div>
+
+              <span class="arrow">
+                →
+              </span>
+
+            </button>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <!-- FOOTER -->
+
+      <footer class="dashboard-footer">
+
+        <span>
+          Sistema de Gestión de Trámites FUT
+        </span>
+
+        <span>
+          I.E. N.° 20191 “Alfonso Ugarte” · Cañete
+        </span>
+
+      </footer>
+
+    </section>
+
+  </main>
+
+</div>

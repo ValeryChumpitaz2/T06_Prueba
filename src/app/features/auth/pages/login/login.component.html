@@ -1,0 +1,412 @@
+<main class="login-page">
+
+    <!-- ===================================== -->
+    <!-- FONDO INSTITUCIONAL -->
+    <!-- ===================================== -->
+
+    <img class="base-background" src="/assets/fondo-alfonso-ugarte.png" alt="I.E. N.° 20191 Alfonso Ugarte">
+
+
+    <!-- ===================================== -->
+    <!-- LEMA SUPERIOR -->
+    <!-- ===================================== -->
+
+    <div class="top-motto">
+
+        Honor · Trabajo · Disciplina
+
+        <svg viewBox="0 0 250 15" aria-hidden="true">
+            <path d="M8 8 C60 14 188 14 242 4"></path>
+        </svg>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- LEMA INFERIOR -->
+    <!-- ===================================== -->
+
+    <div class="bottom-motto">
+
+        “El deber antes que la vida”
+
+        <svg viewBox="0 0 220 15" aria-hidden="true">
+            <path d="M7 7 C50 14 163 14 213 4"></path>
+        </svg>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- VALORES INSTITUCIONALES -->
+    <!-- ===================================== -->
+
+    <section class="pillars" aria-label="Valores institucionales">
+
+
+        <div class="pillar">
+
+            <div class="pillar-symbol">
+                ▤
+            </div>
+
+            <div>
+
+                <b>
+                    Formación
+                </b>
+
+                <span>
+                    Integral
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <i></i>
+
+
+        <div class="pillar">
+
+            <div class="pillar-symbol people">
+                ●●●
+            </div>
+
+            <div>
+
+                <b>
+                    Excelencia
+                </b>
+
+                <span>
+                    Académica
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <i></i>
+
+
+        <div class="pillar">
+
+            <div class="pillar-symbol">
+                ♢
+            </div>
+
+            <div>
+
+                <b>
+                    Convivencia
+                </b>
+
+                <span>
+                    y Respeto
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- TARJETA LOGIN -->
+    <!-- ===================================== -->
+
+    <section class="login-card" aria-label="Acceso al sistema">
+
+
+        <!-- Línea decorativa -->
+        <div class="accent-line"></div>
+
+
+        <!-- ================================= -->
+        <!-- ENCABEZADO -->
+        <!-- ================================= -->
+
+        <div class="login-title-row">
+
+
+            <div>
+
+                <div class="eyebrow">
+                    Acceso al Sistema
+                </div>
+
+                <h1>
+                    Bienvenido
+                </h1>
+
+            </div>
+
+
+            <!-- Marca institucional -->
+
+            <div class="card-brand">
+
+                <img src="/assets/escudo-alfonso-ugarte.png" alt="Escudo institucional">
+
+                <b>
+                    I.E. N.° 20191
+                </b>
+
+                <strong>
+                    Alfonso Ugarte
+                </strong>
+
+                <small>
+                    CAÑETE
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- DESCRIPCIÓN -->
+        <!-- ================================= -->
+
+        <p class="login-description">
+
+            Ingresa con tu correo institucional
+            <br>
+
+            para acceder al sistema.
+
+        </p>
+
+
+        <!-- ================================= -->
+        <!-- FORMULARIO -->
+        <!-- ================================= -->
+
+        <form (ngSubmit)="login()" #loginForm="ngForm" novalidate>
+
+
+            <!-- CORREO -->
+
+            <label for="email">
+                Correo institucional
+            </label>
+
+
+            <div class="field">
+
+                <span class="field-icon">
+                    ✉
+                </span>
+
+
+                <input id="email" name="email" type="email" [(ngModel)]="email"
+                    placeholder="usuario&#64;vallegrande.edu.pe" autocomplete="username" required>
+
+            </div>
+
+
+            <!-- CONTRASEÑA -->
+
+            <label for="password">
+                Contraseña
+            </label>
+
+
+            <div class="field">
+
+                <span class="field-icon">
+                    ▣
+                </span>
+
+
+                <input id="password" name="password" [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password"
+                    placeholder="Contraseña" autocomplete="current-password" required>
+
+
+                <button type="button" class="field-action" (click)="togglePassword()" [attr.aria-label]="
+            showPassword
+              ? 'Ocultar contraseña'
+              : 'Mostrar contraseña'
+          ">
+
+                    {{ showPassword ? '◉' : '○' }}
+
+                </button>
+
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- OPCIONES -->
+            <!-- ================================= -->
+
+            <div class="login-options">
+
+
+                <label class="remember">
+
+                    <input id="remember" name="remember" type="checkbox" [(ngModel)]="rememberSession">
+
+                    <span>
+                        Recordar mi sesión
+                    </span>
+
+                </label>
+
+
+                <button type="button" class="forgot" (click)="forgotPassword()">
+
+                    ¿Olvidaste tu contraseña?
+
+                </button>
+
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- BOTÓN INGRESAR -->
+            <!-- ================================= -->
+
+            <button class="login-button" type="submit" [disabled]="loginForm.invalid || isLoading">
+
+                <span class="login-arrow">
+                    ↪
+                </span>
+
+
+                <b>
+
+                    {{
+                    isLoading
+                    ? 'Ingresando...'
+                    : 'Ingresar al sistema'
+                    }}
+
+                </b>
+
+
+                <span>
+                    ›
+                </span>
+
+            </button>
+
+
+            <!-- ================================= -->
+            <!-- MENSAJE SEGURIDAD -->
+            <!-- ================================= -->
+
+            <div class="security-note">
+
+                <span class="security-icon">
+                    ♡
+                </span>
+
+
+                <p>
+
+                    Acceso exclusivo para personal autorizado
+                    <br>
+
+                    de la
+
+                    <b>
+                        I.E. N.° 20191 “Alfonso Ugarte”.
+                    </b>
+
+                </p>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- MENSAJE DE LOGIN -->
+            <!-- ================================= -->
+
+            @if (loginMessage) {
+
+            <p class="login-message" aria-live="polite">
+
+                {{ loginMessage }}
+
+            </p>
+
+            }
+
+
+            <!-- ================================= -->
+            <!-- CREDENCIALES DE PRUEBA -->
+            <!-- ================================= -->
+
+            <div class="test-credentials">
+
+
+                <div class="test-credentials-title">
+
+                    <span>
+                        🔑
+                    </span>
+
+                    <strong>
+                        Credenciales de prueba
+                    </strong>
+
+                </div>
+
+
+                <div class="test-credentials-data">
+
+
+                    <div>
+
+                        <small>
+                            Correo
+                        </small>
+
+                        <b>
+                            usuario&#64;vallegrande.edu.pe
+                        </b>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Contraseña
+                        </small>
+
+                        <b>
+                            viviana123
+                        </b>
+
+                    </div>
+
+
+                </div>
+
+
+                <p>
+                    Uso exclusivo para pruebas del sistema.
+                </p>
+
+
+            </div>
+
+
+        </form>
+
+
+    </section>
+
+
+</main>
